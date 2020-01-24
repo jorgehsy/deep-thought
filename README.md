@@ -16,11 +16,24 @@ sed -n '/^-- Current Database: `BASE_DE_DATOS`/,/^-- Current Database: `/p' NOMB
 mysql -h 127.0.0.1 -u root -psecret BASE_DE_DATOS < DUMP.sql
 ````
 
-## LINUX /MOUNT /FSTAB
+## LINUX /MOUNT /FSTAB /PERMISSIONS
 
 #### para montar un disco de forma permanente se debe modificar el archivo */etc/fstab*. Para montarlo live se ejecuta el siguiente comando:
 
 ````
 mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport DIRECCION_URL_O_IP:/ NOMBRE_FOLDER
 ````
+
+#### estos comandos corrigen los permisos de los archivos, donde el usuario pertenece al mismo grupo de apache/nginx
+***IMPORTANTE*** verificar la ruta de la carpeta
+
+  para archivos
+````
+sudo find ./ -type f -exec chmod 664 {} \;
+````
+  para carpetas
+````
+sudo find ./ -type d -exec chmod 775 {} \;
+````
+
 
