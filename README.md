@@ -16,6 +16,12 @@ sed -n '/^-- Current Database: `BASE_DE_DATOS`/,/^-- Current Database: `/p' NOMB
 mysql -h 127.0.0.1 -u root -psecret BASE_DE_DATOS < DUMP.sql
 ````
 
+#### bash script para hacer backup de la masede datos mysql
+````bash
+export $(egrep -v '^#' /var/www/proyecto/.env | xargs)
+mysqldump -u $DB_USERNAME -p$DB_PASSWORD $DB_DATABASE > /var/www/proyect/$DB_DATABASE-$(date +"%m-%d-%y-%T").sql
+````
+
 ## LINUX /MOUNT /FSTAB /PERMISSIONS
 
 #### para montar un disco de forma permanente se debe modificar el archivo */etc/fstab*. Para montarlo live se ejecuta el siguiente comando:
