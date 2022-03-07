@@ -48,4 +48,16 @@ Aveces da error el npm install, arrojando el siguiente emnsaje "Error: EACCES: p
 ````
 sudo chown -R $(whoami) ~/.npm
 ````
+## NCDU
 
+La gestión de espacio en disco desde consola puede ser tediosa, ubicar aquella carpeta que tiene escondido mas de 30GB ocupados no es tarea sencilla, para eso utilizo la aplicación [NCDU](https://www.linuxito.com/gnu-linux/nivel-medio/624-ncdu-una-practica-herramienta-para-diagnosticar-el-uso-de-disco).
+
+Para utilizarla debes instalarla 
+````
+sudo apt install ncdu
+````
+Luego ejecutar el scan en la carpeta que deseas, por ejemplo:
+````
+ncdu /var/www
+````
+Empezara a escanear la carpeta seleccionada y te indicara el peso de cada carpeta, al igual que te permite la navegación interna del directorio.
