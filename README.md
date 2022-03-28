@@ -43,7 +43,7 @@ sudo find ./ -type d -exec chmod 775 {} \;
 ````
 ## NPM
  
-Aveces da error el npm install, arrojando el siguiente emnsaje "Error: EACCES: permission denied open '/Users/xxxx/.npm/", puede ser por problemas de permisos en la carpeta del user, se soluciona ejecutando el siguiente comando:
+A veces da error el npm install, arrojando el siguiente emnsaje "Error: EACCES: permission denied open '/Users/xxxx/.npm/", puede ser por problemas de permisos en la carpeta del user, se soluciona ejecutando el siguiente comando:
 
 ````
 sudo chown -R $(whoami) ~/.npm
